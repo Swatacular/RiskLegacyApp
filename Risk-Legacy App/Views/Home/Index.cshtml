@@ -1,11 +1,15 @@
-﻿@{
-    ViewBag.Title = "Home Page";
+﻿@using System.Collections
+@using Risk_Legacy_App.Models
+@model Risk_Legacy_App.Models.Setting
+
+@{
+    ViewBag.Title = "Risk Calculator";
 }
 
 <div class="jumbotron">
-    <h1>ASP.NET</h1>
-    <p class="lead">ASP.NET is a free web framework for building great Web sites and Web applications using HTML, CSS and JavaScript.</p>
-    <p><a href="http://asp.net" class="btn btn-primary btn-lg">Learn more &raquo;</a></p>
+    <h1>Risk: Legacy Calculator</h1>
+    <p class="lead">Random Quote here: “The end is in the beginning and lies far ahead.”
+― Ralph Ellison</p>
 </div>
 
 <div class="row">
@@ -17,29 +21,87 @@
             <!-- Table -->
             <div class="panel-body">
                 <br />
-                <div class="input-group input-group-sm">
-                    <span class="input-group-addon label label-primary" id="sizing-addon3">Attacking</span>
-                    <input type="number" value="3" min="1" max="6" class="form-control" placeholder="Dice" aria-describedby="sizing-addon3">
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="input-group input-group-sm">
+                        <span class="input-group-addon label label-primary">Attacking Dice</span>
+                        <input type="number" value="3" min="1" max="6" class="form-control" placeholder="Dice">
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="input-group input-group-sm">
+                            <span class="input-group-addon label label-danger">Defending Dice</span>
+                            <input type="number" value="2" min="1" max="6" class="form-control" placeholder="Dice">
+                        </div>
+                    </div>
                 </div>
                 <br />
-                <div class="input-group input-group-sm">
-                    <span class="input-group-addon label label-danger" id="sizing-addon2">Defending</span>
-                    <input type="number" value="2" min="1" max="6" class="form-control" placeholder="Dice" aria-describedby="sizing-addon3">
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="input-group input-group-sm">
+                            <span class="input-group-addon label label-primary">Attacking Armies</span>
+                            <input type="number" value="10" min="2" max="5000" class="form-control" placeholder="Armies">
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="input-group input-group-sm">
+                            <span class="input-group-addon label label-danger">Defending Armies</span>
+                            <input type="number" value="10" min="1" max="5000" class="form-control" placeholder="Armies">
+                        </div>
+                    </div>
                 </div>
                 <br />
                 @*To be replaced with optional number of units for Attacking and Defending*@
-                <div class="input-group input-group-sm">
-                    <span class="input-group-addon label label-success" id="sizing-addon1">Rolls</span>
-                    <input type="number" step="100" min="100" max="10000" class="form-control" aria-describedby="sizing-addon3">
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="input-group input-group-sm">
+                            <span class="input-group-addon label label-success">Max Rolls</span>
+                            <input type="number" value=@Model.MyNumber step="100" min="100" max="10000" class="form-control">
+                        </div>
+                    </div>
+                    <br/>
+                    <div class="col-md-3">
+                        <div class="input-group input-group-sm">
+                            <button type="button" class="btn btn-sm btn-success">AutoRoll</button>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="input-group input-group-sm">
+                            <button type="button" class="btn btn-sm btn-success">Roll</button>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
     <div class="col-md-4">
+        @Model.MyString
     </div>
     <div class="col-md-4">
-        <h2>Web Hosting</h2>
-        <p>You can easily find a web hosting company that offers the right mix of features and price for your applications.</p>
-        <p><a class="btn btn-default" href="http://go.microsoft.com/fwlink/?LinkId=301867">Learn more &raquo;</a></p>
+        <div class="row">
+            <div class="col-md-4">.col-md-4</div>
+            <div class="col-md-4">.col-md-4</div>
+            <div class="col-md-4">.col-md-4</div>
+        </div>
+        <div class="row">
+            <div class="col-md-3 col-md-offset-3">.col-md-3 .col-md-offset-3</div>
+            <div class="col-md-2 col-md-offset-4">.col-md-2 .col-md-offset-4</div>
+        </div>
+        <div class="row">
+            <div class="col-md-6 col-md-offset-3">.col-md-6 .col-md-offset-3</div>
+        </div>
+        <div class="row">
+            <div class="col-sm-9">
+                Level 1: .col-sm-9
+                <div class="row">
+                    <div class="col-xs-8 col-sm-6">
+                        Level 2: .col-xs-8 .col-sm-6
+                    </div>
+                    <div class="col-xs-4 col-sm-6">
+                        Level 2: .col-xs-4 .col-sm-6
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
 </div>
