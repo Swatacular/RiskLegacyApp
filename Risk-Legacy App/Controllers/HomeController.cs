@@ -10,6 +10,7 @@ namespace Risk_Legacy_App.Controllers
     {
         public ActionResult Index()
         {
+            
             return View();
         }
 
