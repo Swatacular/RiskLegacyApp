@@ -1,31 +1,29 @@
 ﻿@using System.Collections
 @using Risk_Legacy_App.Models
 @model Risk_Legacy_App.Models.Setting
-
 @{
     ViewBag.Title = "Risk Calculator";
 }
-
 <div class="jumbotron">
     <h1>Risk: Legacy Calculator</h1>
-    <p class="lead">Random Quote here: “The end is in the beginning and lies far ahead.”
-― Ralph Ellison</p>
+    <p class="lead">
+        Random Quote here: “The end is in the beginning and lies far ahead.”
+        ― Ralph Ellison
+    </p>
 </div>
-
 <div class="row">
     <div class="col-md-4">
         <div class="panel panel-info">
             <!-- Default panel contents -->
             <div class="panel-heading">Dice and Rolls</div>
-
             <!-- Table -->
             <div class="panel-body">
                 <br />
                 <div class="row">
                     <div class="col-md-6">
                         <div class="input-group input-group-sm">
-                        <span class="input-group-addon label label-primary">Attacking Dice</span>
-                        <input type="number" value="3" min="1" max="6" class="form-control" placeholder="Dice">
+                            <span class="input-group-addon label label-primary">Attacking Dice</span>
+                            <input type="number" value="3" min="1" max="6" class="form-control" placeholder="Dice">
                         </div>
                     </div>
                     <div class="col-md-6">
@@ -59,7 +57,7 @@
                             <input type="number" value=@Model.MyNumber step="100" min="100" max="10000" class="form-control">
                         </div>
                     </div>
-                    <br/>
+                    <br />
                     <div class="col-md-3">
                         <div class="input-group input-group-sm">
                             <button type="button" class="btn btn-sm btn-success">AutoRoll</button>
@@ -75,7 +73,65 @@
         </div>
     </div>
     <div class="col-md-4">
-        @Model.MyString
+
+        <div class="panel panel-info">
+            <!-- Individual Dice Rules -->
+            <div class="panel-heading">Dice Rules</div>
+            <!-- Most of this code is temporary untill I get jQuery to make it automated -->
+            <div class="panel-body">
+                <br />
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="input-group input-group-sm">
+                            <span class="input-group-addon label label-primary">+/- Highest</span>
+                            <input type="number" value="0" min="-6" max="6" class="form-control" placeholder="+/-">
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="input-group input-group-sm">
+                            <span class="input-group-addon label label-danger">+/- Highest</span>
+                            <input type="number" value="0" min="-6" max="6" class="form-control" placeholder="+/-">
+                        </div>
+                    </div>
+                </div>
+                <br />
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="input-group input-group-sm">
+                            <span class="input-group-addon label label-primary">+/- Lowest</span>
+                            <input type="number" value="0" min="-6" max="6" class="form-control" placeholder="+/-">
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="input-group input-group-sm">
+                            <span class="input-group-addon label label-danger">+/- Lowest</span>
+                            <input type="number" value="0" min="-6" max="6" class="form-control" placeholder="+/-">
+                        </div>
+                    </div>
+                </div>
+                <br />
+                @*To be replaced with optional number of units for Attacking and Defending*@
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="input-group input-group-sm">
+                            <span class="input-group-addon label label-success">Max Rolls</span>
+                            <input type="number" value=@Model.MyNumber step="100" min="100" max="10000" class="form-control">
+                        </div>
+                    </div>
+                    <br />
+                    <div class="col-md-3">
+                        <div class="input-group input-group-sm">
+                            <button type="button" class="btn btn-sm btn-success">AutoRoll</button>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="input-group input-group-sm">
+                            <button type="button" class="btn btn-sm btn-success">Roll</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
     <div class="col-md-4">
         <div class="row">
