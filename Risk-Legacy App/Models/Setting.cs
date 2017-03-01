@@ -7,7 +7,7 @@ namespace Risk_Legacy_App.Models
 {
     public class Setting
     {
-
+        public List<Die> diceList = new List<Die>();
         public int MyNumber { get; set; }
         public string MyString { get; set; }
         public int MyNumberTwo { get; set; }
